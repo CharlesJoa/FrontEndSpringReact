@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import AppNavbar from "./AppNavbar";
+import BrowserRouter from "react-router-dom/BrowserRouter";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders the link of the nav bar', () => {
+  render(<BrowserRouter><AppNavbar/></BrowserRouter>);
+  const element = screen.getByText("Github for back");
+  expect(element).toBeInTheDocument();
 });
